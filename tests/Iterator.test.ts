@@ -1,6 +1,5 @@
 import { ColeccionDePalabras } from '../src/ColeccionDePalabras';
 
-
 describe('Iterator Patron de Disenio', () => {
     let coleccion: ColeccionDePalabras;
   

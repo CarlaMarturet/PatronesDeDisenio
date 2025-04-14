@@ -206,7 +206,9 @@
     "yocto-queue": "^0.1.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "clean": "rimraf dist",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -218,5 +220,8 @@
   "bugs": {
     "url": "https://github.com/CarlaMarturet/PatronesDeDisenio/issues"
   },
-  "homepage": "https://github.com/CarlaMarturet/PatronesDeDisenio#readme"
+  "homepage": "https://github.com/CarlaMarturet/PatronesDeDisenio#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.14"
+  }
 }
