@@ -2,17 +2,17 @@ import { ColeccionDePalabras } from '../src/ColeccionDePalabras';
 
 
 describe('Iterator Patron de Disenio', () => {
-    let collection: ColeccionDePalabras;
+    let coleccion: ColeccionDePalabras;
   
     beforeEach(() => {
-      collection = new ColeccionDePalabras();
-      collection.addItem('Primero');
-      collection.addItem('Segundo');
-      collection.addItem('Tercero');
+      coleccion = new ColeccionDePalabras();
+      coleccion.addItem('Primero');
+      coleccion.addItem('Segundo');
+      coleccion.addItem('Tercero');
     });
   
     test('Recorrido directo (orden normal)', () => {
-      const iterator = collection.getIterator(); // Cambiado aquí
+      const iterator = coleccion.getIterator(); // Cambiado aquí
       const resultado: string[] = [];
   
       while (iterator.valid()) {
@@ -23,7 +23,7 @@ describe('Iterator Patron de Disenio', () => {
     });
   
     test('Recorrido inverso', () => {
-      const iterator = collection.getReverseIterator();
+      const iterator = coleccion.getReverseIterator();
       const resultado: string[] = [];
   
       while (iterator.valid()) {
@@ -31,5 +31,10 @@ describe('Iterator Patron de Disenio', () => {
       }
   
       expect(resultado).toEqual(['Tercero', 'Segundo', 'Primero']);
+    });
+
+    test('No debería devolver un elemento incorrecto al inicio', () => {
+      const iterator = coleccion.getIterator();
+      expect(iterator.next()).not.toBe('Fourth'); // este test pasa porque "Fourth" no es el primer ítem
     });
 });
