@@ -1,24 +1,25 @@
 import { ColeccionDePalabras } from '../src/ColeccionDePalabras';
 
-describe('Iterator Design Pattern', () => {
+
+describe('Iterator Patron de Disenio', () => {
     let collection: ColeccionDePalabras;
   
     beforeEach(() => {
       collection = new ColeccionDePalabras();
-      collection.addItem('First');
-      collection.addItem('Second');
-      collection.addItem('Third');
+      collection.addItem('Primero');
+      collection.addItem('Segundo');
+      collection.addItem('Tercero');
     });
   
     test('Recorrido directo (orden normal)', () => {
-      const iterator = collection.getIterator();
+      const iterator = collection.getIterator(); // Cambiado aquí
       const resultado: string[] = [];
   
       while (iterator.valid()) {
         resultado.push(iterator.next());
       }
   
-      expect(resultado).toEqual(['First', 'Second', 'Third']);
+      expect(resultado).toEqual(['Primero', 'Segundo', 'Tercero']);
     });
   
     test('Recorrido inverso', () => {
@@ -29,6 +30,6 @@ describe('Iterator Design Pattern', () => {
         resultado.push(iterator.next());
       }
   
-      expect(resultado).toEqual(['Third', 'Second', 'First']);
+      expect(resultado).toEqual(['Tercero', 'Segundo', 'Primero']);
     });
-})
+});
