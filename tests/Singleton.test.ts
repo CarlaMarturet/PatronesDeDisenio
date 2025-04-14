@@ -13,6 +13,10 @@ describe('Patron Singleton', () => {
 
         expect(inst1).toBe(inst2);
     });
+});
+
+
+
+
 
     
-});
