@@ -15,8 +15,31 @@ describe('Patron Singleton', () => {
     });
 });
 
+//este test debe fallar porque quiere crear una instancia nueva
+//esto va encontra del patron
 
+//describe('Test negativo del patron Singleton', () => {
 
+//test('no deberian existir dos instancias diferentes', () => {
+    // Simula una mala implementacion o acceso indebido
+   //const instancia1 = Singleton.getInstancia();
+    // @ts-ignore - forzamos acceso directo al constructor (no recomendado)
+ // const instancia2 = new Singleton(); // Esto deberia estar prohibido
 
+  //  expect(instancia1).toBe(instancia2);
+ // });
+
+//testeo de la suma
+describe('Metodo sumar en Singleton', () => {
+    beforeEach(() => {
+      Singleton.resetInstance();
+    });
+  
+    test('debe sumar correctamente dos numeros', () => {
+      const instancia = Singleton.getInstancia();//la unica instancia
+      const resultado = instancia.sumar(5, 3);//la instancia accede al metodo
+      expect(resultado).toBe(8);
+    });
+  });
 
     

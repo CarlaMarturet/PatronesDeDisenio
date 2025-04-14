@@ -23,7 +23,9 @@ export class Singleton {
 
       //metodo de ejemplo para demostrar que se incumple con el principio de R.Unica
       
-    
+      public sumar(a: number, b: number): number {
+        return a + b;
+      }
 
 
 
